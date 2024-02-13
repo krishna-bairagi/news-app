@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3V2Ou4IyHMLGknO6C9Z2WPHR2VL6UJw6iLw&usqp=CAU);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+    background-size: cover; /* or 'contain' based on your preference */
+    background-position: center center; /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* or 'scroll' based on your preference */
+    background-color: #f0f0f0; /* Fallback background color */
+   
+    
+    /* Additional styling for your element */
+    width: 100%;
+    height: 100vh; /* Set the height to cover the viewport */
+    color: #ffffff; /* Text color on top of the background */
+   
+  
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.custom-card {
+  background: linear-gradient(45deg, #3498db, #9b59b6);
+  color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.kk {
+  background: linear-gradient(45deg, #3498db, #9b59b6);
+  color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  object-fit: cover;
+  height: 200px;
+}
