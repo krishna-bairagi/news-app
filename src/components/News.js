@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 
 export class News extends Component {
+  apiKey = process.env.REACT_APP_API_KEY;
    capt=(string)=>{
     return string.charAt(0).toUpperCase()+string.slice(1);
    }
@@ -29,7 +30,7 @@ page:1
       category: PropTypes.string
     }
    async componentDidMount(){
-      let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=bc7669d7608d4b068e3b3235e9a22059&page=1&pageSize=${this.props.pagesize}`;
+      let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.apiKey}&page=1&pageSize=${this.props.pagesize}`;
       this.setState({loading:true});
      
       let data= await fetch(url);
@@ -39,8 +40,7 @@ page:1
       
     }
     handlep=async()=>{
-      console.log("p");
-      let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=bc7669d7608d4b068e3b3235e9a22059&page=${this.state.page-1}&pageSize=${this.props.pagesize}`;
+      let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.apiKey}&page=${this.state.page-1}&pageSize=${this.props.pagesize}`;
       this.setState({loading:true});
      
       let data= await fetch(url);
@@ -55,7 +55,7 @@ page:1
 
       }
       else{
-      let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=bc7669d7608d4b068e3b3235e9a22059&page=${this.state.page+1}&pageSize=${this.props.pagesize}`;
+      let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.apiKey}&page=${this.state.page+1}&pageSize=${this.props.pagesize}`;
       this.setState({loading:true});
       let data= await fetch(url);
       let parsedata=await data.json();
@@ -63,7 +63,8 @@ page:1
         page:this.state.page+1,
         articles: parsedata.articles,
       loading:false})
-    }}
+    }
+  }
     
   render() {
     return (
